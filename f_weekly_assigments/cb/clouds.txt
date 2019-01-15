@@ -1,0 +1,198 @@
+Introduction
+
+Everyone has an opinion on what is cloud computing. It can be the ability to rent a
+server or a thousand servers and run a geophysical modeling application on the most
+powerful systems available anywhere. It can be the ability to rent a virtual server,
+load software on it, turn it on and off at will, or clone it ten times to meet a sudden
+workload demand. It can be storing and securing immense amounts of data that is
+accessible only by authorized applications and users. It can be supported by a cloud
+provider that sets up a platform that includes the OS, Apache, a MySQL™ database,
+Perl, Python, and PHP with the ability to scale automatically in response to changing
+workloads. Cloud computing can be the ability to use applications on the Internet
+that store and protect data while providing a service — anything including email,
+sales force automation and tax preparation. It can be using a storage cloud to hold
+application, business, and personal data. And it can be the ability to use a handful of
+Web services to integrate photos, maps, and GPS information to create a mashup in
+customer Web browsers.
+
+Sun’s perspective
+
+Sun takes an inclusive view that there are many different types of clouds, and
+many different applications that can be built using them. To the extent that cloud
+computing helps to increase the velocity at which applications are deployed, helping
+to increase the pace of innovation, cloud computing may yet take forms that we
+still cannot imagine today. What remains constant, however, is that Sun is an
+experienced provider of server, storage, networking, and software technology that
+is ready to support cloud computing. As the company that coined the phrase “The
+Network is the Computer™,” we believe that cloud computing is the next generation
+of network computing.
+What distinguishes cloud computing from previous models? Boiled down to a
+phrase, it’s using information technology as a service over the network. We define it
+as services that are encapsulated, have an API, and are available over the network.
+This definition encompasses using both compute and storage resources as services.
+Cloud computing is based on the principle of efficiency above all — efficiency that
+produces high-level tools for handling 80% of use cases so that applications can be
+created and deployed at an astonishing rate.
+Cloud computing can be provided using an enterprise datacenter’s own servers,
+or it can be provided by a cloud provider that takes all of the capital risk of owning
+the infrastructure. The illusion is that resources are infinite. While the field is in its
+infancy, the model is taking the information technology (IT) world by storm. The
+predominant model for cloud computing today is called infrastructure as a service,
+or IaaS, and because of its prominence, the IaaS model is the focus of the first
+edition of this white paper.
+This paper discusses the nature of cloud computing and how it builds on established
+trends while transforming the way that enterprises everywhere build and deploy
+applications. It proceeds to discuss the architectural considerations that cloud
+architects must make when designing cloud-based applications, concluding with a
+discussion of Sun’s technologies that support cloud computing.
+
+The Nature of Cloud Computing
+
+Building on established trends
+
+Cloud computing builds on established trends for driving the cost out of the delivery
+of services while increasing the speed and agility with which services are deployed.
+It shortens the time from sketching out an application architecture to actual
+deployment. Cloud computing incorporates virtualization, on-demand deployment,
+Internet delivery of services, and open source software. From one perspective, cloud
+computing is nothing new because it uses approaches, concepts, and best practices
+that have already been established. From another perspective, everything is new
+because cloud computing changes how we invent, develop, deploy, scale, update,
+maintain, and pay for applications and the infrastructure on which they run. In this
+chapter, we examine the trends and how they have become core to what cloud
+computing is all about.
+
+Virtual machines as the standard deployment object
+
+Over the last several years, virtual machines have become a standard deployment
+object. Virtualization further enhances flexibility because it abstracts the hardware
+to the point where software stacks can be deployed and redeployed without being
+tied to a specific physical server. Virtualization enables a dynamic datacenter where
+servers provide a pool of resources that are harnessed as needed, and where the
+relationship of applications to compute, storage, and network resources changes
+dynamically in order to meet both workload and business demands. With application
+deployment decoupled from server deployment, applications can be deployed and
+scaled rapidly, without having to first procure physical servers.
+Virtual machines have become the prevalent abstraction — and unit of
+deployment — because they are the least-common denominator interface between
+service providers and developers. Using virtual machines as deployment objects is
+sufficient for 80 percent of usage, and it helps to satisfy the need to rapidly deploy
+and scale applications.
+Virtual appliances, virtual machines that include software that is partially or fully
+configured to perform a specific task such as a Web or database server, further
+enhance the ability to create and deploy applications rapidly. The combination of
+virtual machines and appliances as standard deployment objects is one of the key
+features of cloud computing.
+Compute clouds are usually complemented by storage clouds that provide virtualized
+storage through APIs that facilitate storing virtual machine images, source files for
+components such as Web servers, application state data, and general business data.
+The on-demand, self-service, pay-by-use model
+The on-demand, self-service, pay-by-use nature of cloud computing is also an
+extension of established trends. From an enterprise perspective, the on-demand
+nature of cloud computing helps to support the performance and capacity aspects
+of service-level objectives. The self-service nature of cloud computing allows
+organizations to create elastic environments that expand and contract based on the
+workload and target performance parameters. And the pay-by-use nature of cloud
+computing may take the form of equipment leases that guarantee a minimum level
+of service from a cloud provider.
+Virtualization is a key feature of this model. IT organizations have understood for
+years that virtualization allows them to quickly and easily create copies of existing
+environments —sometimes involving multiple virtual machines — to support test,
+development, and staging activities. The cost of these environments is minimal
+because they can coexist on the same servers as production environments because
+they use few resources.
+Likewise, new applications can be developed and deployed in new virtual machines
+on existing servers, opened up for use on the Internet, and scaled if the application
+is successful in the marketplace. This lightweight deployment model has already
+led to a “Darwinistic” approach to business development where beta versions of
+software are made public and the market decides which applications deserve to be
+scaled and developed further or quietly retired.
+Cloud computing extends this trend through automation. Instead of negotiating
+with an IT organization for resources on which to deploy an application, a compute
+cloud is a self-service proposition where a credit card can purchase compute cycles,
+and a Web interface or API is used to create virtual machines and establish network
+relationships between them. Instead of requiring a long-term contract for services
+with an IT organization or a service provider, clouds work on a pay-by-use, or payby-
+the-sip model where an application may exist to run a job for a few minutes or
+hours, or it may exist to provide services to customers on a long-term basis. Compute
+clouds are built as if applications are temporary, and billing is based on resource
+consumption: CPU hours used, volumes of data moved, or gigabytes of data stored.
+The ability to use and pay for only the resources used shifts the risk of how much
+infrastructure to purchase from the organization developing the application to
+the cloud provider. It also shifts the responsibility for architectural decisions from
+application architects to developers. This shift can increase risk, risk that must be
+managed by enterprises that have processes in place for a reason, and of system,
+network, and storage architects that needs to factor in to cloud computing designs.
+
+Infrastructure is programmable
+
+This shift of architectural responsibility has significant consequences. In the past,
+architects would determine how the various components of an application would be
+laid out onto a set of servers, how they would be interconnected, secured, managed,
+and scaled. Now, a developer can use a cloud provider’s API to create not only an
+application’s initial composition onto virtual machines, but also how it scales and
+evolves to accommodate workload changes.
+Consider this analogy: historically, a developer writing software using the Java™
+programming language determines when it’s appropriate to create new threads to
+allow multiple activities to progress in parallel. Today, a developer can discover and
+attach to a service with the same ease, allowing them to scale an application to the
+point where it might engage thousands of virtual machines in order to accommodate
+a huge spike in demand.
+The ability to program an application architecture dynamically puts enormous power
+in the hands of developers with a commensurate amount of responsibility. To use
+cloud computing most effectively, a developer must also be an architect, and that
+architect needs to be able to create a self-monitoring and self-expanding application.
+The developer/architect needs to understand when it’s appropriate to create a new
+thread versus create a new virtual machine, along with the architectural patterns for
+how they are interconnected.
+When this power is well understood and harnessed, the results can be spectacular.
+A story that is already becoming legendary is Animoto’s mashup tool that creates a
+video from a set of images and music. The company’s application scaled from 50 to
+3,500 servers in just three days due in part to an architecture that allowed it to scale
+easily. For this to work, the application had to be built to be horizontal scaled, have
+limited state, and manage its own deployment through cloud APIs. For every success
+story such as this, there will likely be a similar story where the application is not
+capable of self-scaling and where it fails to meet consumer demand. The importance
+of this shift from developer to developer/architect cannot be understated.
+Consider whether your enterprise datacenter could scale an application this rapidly
+to accommodate such a rapidly growing workload, and whether cloud computing
+could augment your current capabilities.
+
+Applications are composed and are built to be composable
+
+Another consequence of the self-service, pay-by-use model is that applications are
+composed by assembling and configuring appliances and open-source software as
+much as they are programmed. Applications and architectures that can be refactored
+in order to make the most use of standard components are those that will be the
+most successful in leveraging the benefits of cloud computing. Likewise, application
+components should be designed to be composable by building them so they can be
+consumed easily. This requires having simple, clear functions, and well-documented
+APIs. Building large, monolithic applications is a thing of the past as the library of
+existing tools that can be used directly or tailored for a specific use becomes ever
+larger.
+For example, tools such as Hadoop, an open-source MapReduce implementation,
+can be used in a wide range of contexts in which a problem and its data can be
+refactored so that many parts of it can execute in parallel. When The New York Times
+wished to convert 11 million articles and images in its archive to PDF format, their
+internal IT organization said that it would take seven weeks. In the mean time, one
+developer using 100 Amazon EC2 simple Web service interface instances running
+Hadoop completed the job in 24 hours for less than $300. (This did not include the
+time required to upload the data or the cost of the storage.)
+Even large corporations can use cloud computing in ways that solve significant
+problems in less time and at a lower cost than with traditional enterprise computing.
+Example Web application deployment
+As an example of how the combination of virtualization and self service facilitate
+application deployment, consider a two-tier Web application deployment into a
+cloud:
+1. A developer might choose a load balancer, Web server, and database server
+appliances from a library of preconfigured virtual machine images.
+2. The developer would configure each component to make a custom image. The
+load balancer would be configured, the Web server populated with its static
+content by uploading it to the storage cloud, and the database server appliances
+populated with dynamic content for the site.
+3. The developer layers custom code into the new architecture, making the
+components meet specific application requirements.
+4. The developer chooses a pattern that takes the images for each layer and
+deploys them, handling networking, security, and scalability issues.
+For a description of how this feat was accomplished, please visit: 
+http://open.blogs.nytimes.com/2007/11/01/self-serviceprorated-super-computing-fun/
